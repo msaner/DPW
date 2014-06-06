@@ -13,9 +13,13 @@ adjective1 = raw_input("Enter an adjective and hit enter.")
 verb1 = raw_input("Enter a verb and hit enter.")
 verb2 = raw_input("Enter another verb and hit enter.")
 pets = raw_input("Enter how many pets you have and hit enter.")
-
-
-color = dict()
-color = {"red":"unicorn", "orange":"beaver", "yellow":"squirrel", "green":"duck", "blue":"eagle", "purple":"t-rex"}
 color = raw_input("Enter your favorite color of the rainbow; (red orange yellow green blue or purple) and hit enter.")
-print color
+
+animal = dict()
+animal = {"red":"unicorn", "orange":"beaver", "yellow":"squirrel", "green":"duck", "blue":"eagle", "purple":"t-rex"}
+
+
+
+
+if color in animal:
+    print(animal[color])
