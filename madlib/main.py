@@ -25,7 +25,7 @@ future_date = int(dob) + 1256
 print future_date
 
 if color in animal:
-    print(animal[color])
+    new_animal = (animal[color])
 
 #getting rid of the indenting ends the if statement
 
@@ -48,3 +48,5 @@ else:
     pack_desc = "gang"
 
 print pack_desc
+
+print "In the year " + str(future_date) + name + " was " + verb + " the small town of Kokomo. " + " Suddenly, a " + pack_desc + " of angry "
