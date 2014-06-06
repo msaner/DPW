@@ -20,7 +20,7 @@ animal = dict()
 animal = {"red":"unicorn", "orange":"beaver", "yellow":"squirrel", "green":"duck", "blue":"eagle", "purple":"t-rex"}
 
 # we're going to add the users year of birth to a number to get a year in the future by adding the two numbers
-future_date = dob + 1256
+future_date = int(dob) + 1256
 print future_date
 
 if color in animal:
