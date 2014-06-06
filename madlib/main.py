@@ -42,3 +42,9 @@ pack = pack_size(number);
 print pack
 
 #lets analyze the pack_size and figure out how we are going to describe it in terms of size
+if pack > 10:
+    pack_desc = "massive herd"
+else:
+    pack_desc = "gang"
+
+print pack_desc
