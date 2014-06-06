@@ -34,3 +34,4 @@ now we will figure out how many animals there will be in our story by multiplyin
 dont forget that the variable is a sting so we have to convert it to an integer with int()
 '''
 pack_size = int(number) * 3
+print pack_size
