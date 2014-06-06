@@ -22,7 +22,6 @@ animal = {"red":"unicorn", "orange":"beaver", "yellow":"squirrel", "green":"duck
 # we're going to add the users year of birth to a number to get a year in the future by adding the two numbers
 # dob is a string so we need to convert that to an integer so we can add it.  do this by adding int()
 future_date = int(dob) + 1256
-print future_date
 
 if color in animal:
     new_animal = (animal[color])
@@ -39,14 +38,11 @@ def pack_size(number):
     return size
 
 pack = pack_size(number);
-print pack
 
 #lets analyze the pack_size and figure out how we are going to describe it in terms of size
 if pack > 10:
     pack_desc = "massive herd"
 else:
     pack_desc = "gang"
-
-print pack_desc
 
 print "In the year " + str(future_date) + " " + name + " was " + verb1 + " the small town of Kokomo. " + " Suddenly, a " + pack_desc + " of " + adjective1 + " " + new_animal + " was " + verb2 + " the town!" + " " + name + " was not in a fighting mood so he grabbed " + pets + " Dr. Peppers a hot dog and found a nice bean bag to have lunch in."
