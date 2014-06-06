@@ -49,4 +49,4 @@ else:
 
 print pack_desc
 
-print "In the year " + str(future_date) + " " + name + " was " + verb1 + " the small town of Kokomo. " + " Suddenly, a " + pack_desc + " of " + adjective1 + " " + new_animal + " began " + " to " + verb2 + " the town!"
+print "In the year " + str(future_date) + " " + name + " was " + verb1 + " the small town of Kokomo. " + " Suddenly, a " + pack_desc + " of " + adjective1 + " " + new_animal + " was " + verb2 + " the town!" + " " + name + " was not in a fighting mood so he grabbed " + pets + " Dr. Peppers a hot dog and found a nice bean bag to have lunch in."
