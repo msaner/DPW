@@ -33,6 +33,7 @@ now we will figure out how many animals there will be in our story by making an 
 dont forget that the variable is a sting so we have to convert it to an integer with int()
 '''
 
+
 def pack_size(number):
     size = int(number) * 9 - 1
     return size
