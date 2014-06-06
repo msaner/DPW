@@ -33,6 +33,12 @@ if color in animal:
 now we will figure out how many animals there will be in our story by making an equation
 dont forget that the variable is a sting so we have to convert it to an integer with int()
 '''
-pack_size = int(number) * 9 - 1
-print pack_size
 
+def pack_size(number):
+    size = int(number) * 9 - 1
+    return size
+
+pack = pack_size(number);
+print pack
+
+#lets analyze the pack_size and figure out how we are going to describe it in terms of size
