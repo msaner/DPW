@@ -14,3 +14,8 @@ verb1 = raw_input("Enter a verb and hit enter.")
 verb2 = raw_input("Enter another verb and hit enter.")
 pets = raw_input("Enter how many pets you have and hit enter.")
 color = raw_input("Enter your favorite color of the rainbow; (red orange yellow green blue or purple) and hit enter.")
+
+color = dict()
+color = {"red":"unicorn", "orange":"beaver", "yellow":"squirrel", "green":"duck", "blue":"eagle", "purple":"t-rex"}
+
+print color
