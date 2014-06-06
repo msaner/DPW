@@ -20,8 +20,17 @@ animal = dict()
 animal = {"red":"unicorn", "orange":"beaver", "yellow":"squirrel", "green":"duck", "blue":"eagle", "purple":"t-rex"}
 
 # we're going to add the users year of birth to a number to get a year in the future by adding the two numbers
+# dob is a string so we need to convert that to an integer so we can add it.  do this by adding int()
 future_date = int(dob) + 1256
 print future_date
 
 if color in animal:
     print(animal[color])
+
+#getting rid of the indenting ends the if statement
+
+'''
+now we will figure out how many animals there will be in our story by multiplying the number variable by 3
+dont forget that the variable is a sting so we have to convert it to an integer with int()
+'''
+pack_size = int(number) * 3
