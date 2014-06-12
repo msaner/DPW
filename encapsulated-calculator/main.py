@@ -80,6 +80,12 @@ class Food(object):
         self.other = 0
         self.__total = 0 # the total attribute is private
 
+    #set up a getter so we can use the private data
+    @property
+    def tot_exp(self): #make sure this function name matches the attribute above
+        #calculate the weekly cost of food
+        self.__total = self.groceries + self.fast_food + self.dining_out + self.work_snacks + self.other
+        return self.__total
 
 
 # can't touch this nah na na nahh... can't touch this
