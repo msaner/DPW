@@ -36,6 +36,14 @@ class MainHandler(webapp2.RequestHandler):
         r.other = 0
 
         #Mary
+        s = Food()
+        s.groceries = 55
+        s.fast_food = 23
+        s.dining_out = 81
+        s.work_snacks = 7
+        s.other = 14
+
+        
 
 class Food(object):
     def __init__(self):
