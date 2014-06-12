@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="974fd621-c3d6-40a9-bd08-05a2eff5bb85" name="Default" comment="" />
-    <ignored path="encapsulated-calculator.iws" />
+    <list default="true" id="377d49ef-ff0d-46f4-a45d-244245eed88d" name="Default" comment="" />
+    <ignored path="classes-html.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,15 +19,15 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="encapsulated-calculator" />
+    <favorites_list name="classes-html" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8264463" vertical-offset="174" max-vertical-offset="1680">
-              <caret line="100" column="12" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.77272725" vertical-offset="1404" max-vertical-offset="2130">
+              <caret line="131" column="8" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -83,17 +83,17 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="encapsulated-calculator" />
+              <option name="myItemId" value="classes-html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="encapsulated-calculator" />
+              <option name="myItemId" value="classes-html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="encapsulated-calculator" />
+              <option name="myItemId" value="classes-html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -108,9 +108,9 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="974fd621-c3d6-40a9-bd08-05a2eff5bb85" name="Default" comment="" />
-      <created>1402541207175</created>
-      <updated>1402541207175</updated>
+      <changelist id="377d49ef-ff0d-46f4-a45d-244245eed88d" name="Default" comment="" />
+      <created>1402543773991</created>
+      <updated>1402543773991</updated>
     </task>
     <servers />
   </component>
@@ -159,8 +159,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8264463" vertical-offset="174" max-vertical-offset="1680">
-          <caret line="100" column="12" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.77272725" vertical-offset="1404" max-vertical-offset="2130">
+          <caret line="131" column="8" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="8" />
           <folding />
         </state>
       </provider>

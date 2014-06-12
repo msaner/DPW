@@ -94,6 +94,11 @@ class Food(object):
         self.__total = self.groceries + self.fast_food + self.dining_out + self.work_snacks + self.other
         return self.__total
 
+    #setter this won't be used in this application right now
+    @total.setter
+    def total(self, new_total):
+        self.__total = new_total
+        pass
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
