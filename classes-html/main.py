@@ -26,7 +26,7 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = Page()
-        print p.print_out()
+        self.response.write(p.print_out())
 
 #HTML code to be outputted goes here in comments
 class Page(object):
@@ -37,7 +37,7 @@ class Page(object):
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>{self.title}</title>
 
 
         <link href="main.css" rel="stylesheet" type="text/css">
@@ -51,22 +51,22 @@ class Page(object):
     <div class="chart">
         <table class="spending-chart" cellpadding="0" cellspacing="1">
         <tr>
-            <td class="light"><img src="user.png" alt="user icon">
+            <td class="light"><img src="http://www.teamsaner.com/RMO/user.png" alt="user icon">
                 <p>User</p>
             </td>
-            <td class="dark"><img src="other.png" alt="user icon" height="90">
+            <td class="dark"><img src="http://www.teamsaner.com/RMO/groceries.png" alt="user icon" height="90">
                 <p>Groceries</p>
             </td>
-            <td class="light"><img src="fast-food.png" alt="user icon" height="90">
+            <td class="light"><img src="http://www.teamsaner.com/RMO/fast.png" alt="user icon" height="90">
                 <p>Fast Food</p>
             </td>
-            <td class="dark"><img src="dining-out.png" alt="user icon" height="90">
+            <td class="dark"><img src="http://www.teamsaner.com/RMO/dining.png" alt="user icon" height="90">
                 <p>Dining Out</p>
             </td>
-            <td class="light"><img src="work-snacks.png" alt="user icon" height="90">
+            <td class="light"><img src="http://www.teamsaner.com/RMO/work.png" alt="user icon" height="90">
                 <p>Work Snacks</p>
             </td>
-            <td class="dark"><img src="groceries.png" alt="user icon" height="90">
+            <td class="dark"><img src="http://www.teamsaner.com/RMO/other.png" alt="user icon" height="90">
                 <p>Other</p>
             </td>
         </tr>
@@ -129,7 +129,9 @@ class Page(object):
 
     #function to print out the HTML code
     def print_out(self):
-        return self.head + self.body + self.close
+        all = self.head + self.body + self.close
+        all = all.format(**locals())
+        return all
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
