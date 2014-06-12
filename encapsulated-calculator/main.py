@@ -34,6 +34,9 @@ class MainHandler(webapp2.RequestHandler):
         r.dining_out = 40
         r.work_snacks = 5
         r.other = 0
+        #call the getter function and print result
+        print r.tot_exp
+
 
         #Mary
         m = Food()
