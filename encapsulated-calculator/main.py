@@ -22,9 +22,14 @@ Encapsulated Calculator
 # limitations under the License.
 #
 import webapp2
+from pages import Page
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        p = Page()
+        self.response.write(p.print_out())
+
         #weekly expenses for users
 
         #Robert
@@ -96,8 +101,7 @@ class Food(object):
 
     #setter this won't be used in this application right now
     @total.setter
-    def total(self, new_total):
-        self.__total = new_total
+    def total(self):
         pass
 
 # can't touch this nah na na nahh... can't touch this
