@@ -36,12 +36,12 @@ class MainHandler(webapp2.RequestHandler):
         r.other = 0
 
         #Mary
-        s = Food()
-        s.groceries = 55
-        s.fast_food = 23
-        s.dining_out = 81
-        s.work_snacks = 7
-        s.other = 14
+        m = Food()
+        m.groceries = 55
+        m.fast_food = 23
+        m.dining_out = 81
+        m.work_snacks = 7
+        m.other = 14
 
         #James
         j = Food()
@@ -50,6 +50,25 @@ class MainHandler(webapp2.RequestHandler):
         j.dining_out = 0
         j.work_snacks = 13
         j.other = 21
+
+        #Katy
+        s = Food()
+        s.groceries = 55
+        s.fast_food = 23
+        s.dining_out = 81
+        s.work_snacks = 7
+        s.other = 14
+
+        #Steve
+        s = Food()
+        s.groceries = 55
+        s.fast_food = 23
+        s.dining_out = 81
+        s.work_snacks = 7
+        s.other = 14
+
+
+
 
 class Food(object):
     def __init__(self):
