@@ -25,14 +25,17 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        #expenses for Robert
+        #weekly expenses for users
+
+        #Robert
         r = Food()
         r.groceries = 90
         r.fast_food = 40
         r.dining_out = 40
         r.work_snacks = 5
         r.other = 0
-        
+
+        #Mary
 
 class Food(object):
     def __init__(self):
