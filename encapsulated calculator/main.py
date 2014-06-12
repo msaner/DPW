@@ -25,7 +25,14 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        #expenses for Robert
+        r = Food()
+        r.groceries = 90
+        r.fast_food = 40
+        r.dining_out = 40
+        r.work_snacks = 5
+        r.other = 0
+        
 
 class Food(object):
     def __init__(self):
@@ -39,7 +46,7 @@ class Food(object):
 
 
 
-# can't touch this nah na na nahh...
+# can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
