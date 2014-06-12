@@ -52,20 +52,20 @@ class MainHandler(webapp2.RequestHandler):
         j.other = 21
 
         #Katy
-        s = Food()
-        s.groceries = 55
-        s.fast_food = 23
-        s.dining_out = 81
-        s.work_snacks = 7
-        s.other = 14
+        k = Food()
+        k.groceries = 118
+        k.fast_food = 56
+        k.dining_out = 21
+        k.work_snacks = 4
+        k.other = 0
 
         #Steve
         s = Food()
-        s.groceries = 55
-        s.fast_food = 23
-        s.dining_out = 81
-        s.work_snacks = 7
-        s.other = 14
+        s.groceries = 249
+        s.fast_food = 87
+        s.dining_out = 107
+        s.work_snacks = 36
+        s.other = 0
 
 
 
