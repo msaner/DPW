@@ -1,3 +1,10 @@
+'''
+Michael Saner
+June 10, 2014
+Design Patterns for Web Programming - Online
+Encapsulated Calculator
+'''
+
 #!/usr/bin/env python
 #
 # Copyright 2007 Google Inc.
@@ -18,8 +25,64 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        #weekly expenses for users
 
+        #Robert
+        r = Food()
+        r.groceries = 90
+        r.fast_food = 40
+        r.dining_out = 40
+        r.work_snacks = 5
+        r.other = 0
+
+        #Mary
+        m = Food()
+        m.groceries = 55
+        m.fast_food = 23
+        m.dining_out = 81
+        m.work_snacks = 7
+        m.other = 14
+
+        #James
+        j = Food()
+        j.groceries = 213
+        j.fast_food = 57
+        j.dining_out = 0
+        j.work_snacks = 13
+        j.other = 21
+
+        #Katy
+        k = Food()
+        k.groceries = 118
+        k.fast_food = 56
+        k.dining_out = 21
+        k.work_snacks = 4
+        k.other = 0
+
+        #Steve
+        s = Food()
+        s.groceries = 249
+        s.fast_food = 87
+        s.dining_out = 107
+        s.work_snacks = 36
+        s.other = 0
+
+
+
+
+class Food(object):
+    def __init__(self):
+        # these attributes will be public unless noted otherwise
+        self.groceries = 0
+        self.fast_food = 0
+        self.dining_out = 0
+        self.work_snacks = 0
+        self.other = 0
+        self.__total = 0 # the total attribute is private
+
+
+
+# can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
