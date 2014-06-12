@@ -35,7 +35,7 @@ class MainHandler(webapp2.RequestHandler):
         r.work_snacks = 5
         r.other = 0
         #call the getter function and print result
-        print r.tot_exp
+        self.response.write('Robert spent $' + str(r.tot_exp) + ' on food this week.')
 
 
         #Mary
@@ -45,6 +45,7 @@ class MainHandler(webapp2.RequestHandler):
         m.dining_out = 81
         m.work_snacks = 7
         m.other = 14
+        self.response.write('Mary spent $' + str(r.tot_exp) + ' on food this week.')
 
         #James
         j = Food()
@@ -53,6 +54,7 @@ class MainHandler(webapp2.RequestHandler):
         j.dining_out = 0
         j.work_snacks = 13
         j.other = 21
+        self.response.write('James spent $' + str(r.tot_exp) + ' on food this week.')
 
         #Katy
         k = Food()
@@ -61,6 +63,7 @@ class MainHandler(webapp2.RequestHandler):
         k.dining_out = 21
         k.work_snacks = 4
         k.other = 0
+        self.response.write('Katy spent $' + str(r.tot_exp) + ' on food this week.')
 
         #Steve
         s = Food()
@@ -69,6 +72,7 @@ class MainHandler(webapp2.RequestHandler):
         s.dining_out = 107
         s.work_snacks = 36
         s.other = 0
+        self.response.write('Steve spent $' + str(r.tot_exp) + ' on food this week.')
 
 
 
