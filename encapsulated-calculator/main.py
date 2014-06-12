@@ -79,7 +79,8 @@ class MainHandler(webapp2.RequestHandler):
         s.other = 0
         self.response.write('Steve spent $' + str(s.total) + ' on food this week.')
 
-
+        users = [r, m, j, k, s]
+        print users[0].groceries
 
 
 class Food(object):
