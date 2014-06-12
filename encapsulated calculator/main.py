@@ -29,16 +29,17 @@ class MainHandler(webapp2.RequestHandler):
 
 class Food(object):
     def __init__(self):
+        # these attributes will be public unless noted otherwise
         self.groceries = 0
         self.fast_food = 0
         self.dining_out = 0
         self.work_snacks = 0
         self.other = 0
-        self.__total = 0 
+        self.__total = 0 # the total attribute is private
 
 
 
-
+# can't touch this nah na na nahh...
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
