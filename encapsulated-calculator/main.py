@@ -5,7 +5,7 @@ Design Patterns for Web Programming - Online
 Encapsulated Calculator
 '''
 
-#!/usr/bin/env python
+# !/usr/bin/env python
 #
 # Copyright 2007 Google Inc.
 #
@@ -27,11 +27,10 @@ from pages import Page
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
         #weekly expenses for users
 
         #Robert
-        r = Food()
+        r = write_stuff()
         r.groceries = 90
         r.fast_food = 40
         r.dining_out = 40
@@ -42,7 +41,7 @@ class MainHandler(webapp2.RequestHandler):
         r.update()
 
         #Mary
-        m = Food()
+        m = write_stuff()
         m.groceries = 55
         m.fast_food = 23
         m.dining_out = 81
@@ -53,7 +52,7 @@ class MainHandler(webapp2.RequestHandler):
         m.update()
 
         #James
-        j = Food()
+        j = write_stuff()
         j.groceries = 213
         j.fast_food = 57
         j.dining_out = 0
@@ -64,7 +63,7 @@ class MainHandler(webapp2.RequestHandler):
         j.update()
 
         #Katy
-        k = Food()
+        k = write_stuff()
         k.groceries = 118
         k.fast_food = 56
         k.dining_out = 21
@@ -75,7 +74,7 @@ class MainHandler(webapp2.RequestHandler):
         k.update()
 
         #Steve
-        s = Food()
+        s = write_stuff()
         s.groceries = 249
         s.fast_food = 87
         s.dining_out = 107
@@ -86,10 +85,20 @@ class MainHandler(webapp2.RequestHandler):
         s.update()
 
 
-
     #the HTML
+class write_stuff(object):
     def __init__(self):
-        whole_page = '''<!DOCTYPE HTML>
+        # these attributes will be public unless noted otherwise
+        self.groceries = 0
+        self.fast_food = 0
+        self.dining_out = 0
+        self.work_snacks = 0
+        self.other = 0
+        self.__total = 0  # the total attribute is private
+
+
+        #this here is the template
+        self.page = '''<!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -120,26 +129,18 @@ class MainHandler(webapp2.RequestHandler):
     </div>
 </div>
         '''
-        self.close ='''
+        self.close = '''
     </body>
 </html>
         '''
+    def update(self):
+        all = self.head + self.body + self.close
+        all = all.format(**locals())
 
-
-
-class Food(object):
-    def __init__(self):
-        # these attributes will be public unless noted otherwise
-        self.groceries = 0
-        self.fast_food = 0
-        self.dining_out = 0
-        self.work_snacks = 0
-        self.other = 0
-        self.__total = 0 # the total attribute is private
 
     #set up a getter so we can use the private data
     @property
-    def total(self): #make sure this function name matches the attribute above
+    def total(self):  #make sure this function name matches the attribute above
         #calculate the weekly cost of food
         self.__total = self.groceries + self.fast_food + self.dining_out + self.work_snacks + self.other
         return self.__total
@@ -151,5 +152,5 @@ class Food(object):
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+                                  ('/', MainHandler)
+                              ], debug=True)
