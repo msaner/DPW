@@ -37,7 +37,7 @@ class MainHandler(webapp2.RequestHandler):
         r.work_snacks = 5
         r.other = 0
         #call the getter function and print result
-        r.total = r.groceries + r.fast_food + r.dining_out + r.work_snacks + r.other
+        r.total = int(r.groceries) + int(r.fast_food) + int(r.dining_out) + int(r.work_snacks) + int(r.other)
         r.update()
 
         #Mary
@@ -121,13 +121,26 @@ class write_stuff(object):
 			<input type="submit" value="Katy" name="process" class="button"><br>
 			<input type="submit" value="Steve" name="process" class="button">
         </form>
+
+        <div>
+        	<a href="?user=r">Robert</a>
+            <a href="?user=m">Mary</a>
+            <a href="?user=j">James</a>
+            <a href="?user=k">Katy</a>
+            <a href="?user=s">Steve</a>
+        </div>
      </div><!-- chart -->
 
     <div class="receipt">
-    	<img src="receipt.jpg">
-        <div class="total"></div>
+    	<img src="http://www.teamsaner.com/RMO/receipt.jpg">
+        <div class="total">
+        	<p>Groceries: ${self.groceries}</p>
+            <p>Fast Food: ${self.fast_food}</p>
+        	<p>Dining Out: ${self.dining_out}</p>
+            <p>Work Snacks: ${self.work_snacks}</p>
+            <p>Other: ${self.other}</p>
+        </div>
     </div>
-</div>
         '''
         self.close = '''
     </body>
@@ -142,7 +155,7 @@ class write_stuff(object):
     @property
     def total(self):  #make sure this function name matches the attribute above
         #calculate the weekly cost of food
-        self.__total = self.groceries + self.fast_food + self.dining_out + self.work_snacks + self.other
+        self.__total
         return self.__total
 
     #setter this won't be used in this application right now
@@ -152,5 +165,5 @@ class write_stuff(object):
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
-                                  ('/', MainHandler)
-                              ], debug=True)
+    ('/', MainHandler)
+], debug=True)
