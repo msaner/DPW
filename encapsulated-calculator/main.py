@@ -37,7 +37,7 @@ class MainHandler(webapp2.RequestHandler):
         r.work_snacks = 5
         r.other = 0
         #call the getter function and print result
-        r.__total = int(r.groceries) + int(r.fast_food) + int(r.dining_out) + int(r.work_snacks) + int(r.other)
+        r.total = int(r.groceries) + int(r.fast_food) + int(r.dining_out) + int(r.work_snacks) + int(r.other)
         r.update()
 
         #Mary
@@ -84,6 +84,20 @@ class MainHandler(webapp2.RequestHandler):
         s.total = s.groceries + s.fast_food + s.dining_out + s.work_snacks + s.other
         s.update()
 
+        if self.request.GET:
+            person = self.request.GET['user']
+
+            if person == "r":
+                self.response.write(r.print_out())
+            elif person == "m":
+                self.response.write(m.print_out())
+            elif person == "j":
+                self.response.write(j.print_out())
+            elif person == "k":
+                self.response.write(k.print_out())
+            elif person == "s":
+                self.response.write(s.print_out())
+
 
     #the HTML
 class write_stuff(object):
@@ -94,11 +108,11 @@ class write_stuff(object):
         self.dining_out = 0
         self.work_snacks = 0
         self.other = 0
-        self.__total = 0  # the total attribute is private
+        self.total = 0  # the total attribute is private
 
 
         #this here is the template
-        self.page = '''<!DOCTYPE HTML>
+        self.__page = '''<!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -109,19 +123,11 @@ class write_stuff(object):
     </head>
     <body>
         '''
-        self.body = '''<div class="container">
+        self.__body = '''<div class="container">
 
     	<h1>Weekly Food Cost Calculator</h1>
         <p>Click on a users name to reveal their weekly expenses.</p>
     <div class="chart">
-		<form action="" method="GET" name="expenses" id="user-spending">
-        	<input type="submit" value="Robert" name="process" class="button"><br>
-            <input type="submit" value="Mary" name="process" class="button"><br>
-			<input type="submit" value="James" name="process" class="button"><br>
-			<input type="submit" value="Katy" name="process" class="button"><br>
-			<input type="submit" value="Steve" name="process" class="button">
-        </form>
-
         <div>
         	<a href="?user=r">Robert</a>
             <a href="?user=m">Mary</a>
@@ -142,26 +148,29 @@ class write_stuff(object):
         </div>
     </div>
         '''
-        self.close = '''
+        self.__close = '''
     </body>
 </html>
         '''
-    def update(self):
-        all = self.page + self.body + self.close
-        all = all.format(**locals())
+        self.__everything = self.__page + self.__body + self.__close
+
+    def print_out(self):
+        return self.__everything
 
 
-    #set up a getter so we can use the private data
     @property
-    def total(self):  #make sure this function name matches the attribute above
-        #calculate the weekly cost of food
-        self.__total
+    def alltotal(self):  #make sure this function name matches the attribute above
 
+        return self.__everything
 
     #setter this won't be used in this application right now
-    @total.setter
-    def total(self):
-        pass
+    @alltotal.setter
+    def alltotal(self, new):
+        self.__everything = str(new)
+
+    def update(self):
+        self.__everything = self.__everything.format(**locals())
+
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
