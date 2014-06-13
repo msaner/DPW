@@ -37,7 +37,7 @@ class MainHandler(webapp2.RequestHandler):
         r.work_snacks = 5
         r.other = 0
         #call the getter function and print result
-        r.total = int(r.groceries) + int(r.fast_food) + int(r.dining_out) + int(r.work_snacks) + int(r.other)
+        r.__total = int(r.groceries) + int(r.fast_food) + int(r.dining_out) + int(r.work_snacks) + int(r.other)
         r.update()
 
         #Mary
@@ -147,7 +147,7 @@ class write_stuff(object):
 </html>
         '''
     def update(self):
-        all = self.head + self.body + self.close
+        all = self.page + self.body + self.close
         all = all.format(**locals())
 
 
@@ -156,7 +156,7 @@ class write_stuff(object):
     def total(self):  #make sure this function name matches the attribute above
         #calculate the weekly cost of food
         self.__total
-        return self.__total
+
 
     #setter this won't be used in this application right now
     @total.setter
