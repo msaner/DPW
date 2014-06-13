@@ -27,8 +27,6 @@ from pages import Page
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        p = Page()
-        self.response.write(p.print_out())
 
         #weekly expenses for users
 
@@ -87,11 +85,45 @@ class MainHandler(webapp2.RequestHandler):
         s.total = s.groceries + s.fast_food + s.dining_out + s.work_snacks + s.other
         s.update()
 
-        
 
-        #change the HTML
-        if self.request.GET:
-            groc = self.request.GET['r']
+
+    #the HTML
+    def __init__(self):
+        whole_page = '''<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Food Cost Calculator</title>
+
+
+        <link href="http://www.teamsaner.com/RMO/main.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        '''
+        self.body = '''<div class="container">
+
+    	<h1>Weekly Food Cost Calculator</h1>
+        <p>Click on a users name to reveal their weekly expenses.</p>
+    <div class="chart">
+		<form action="" method="GET" name="expenses" id="user-spending">
+        	<input type="submit" value="Robert" name="process" class="button"><br>
+            <input type="submit" value="Mary" name="process" class="button"><br>
+			<input type="submit" value="James" name="process" class="button"><br>
+			<input type="submit" value="Katy" name="process" class="button"><br>
+			<input type="submit" value="Steve" name="process" class="button">
+        </form>
+     </div><!-- chart -->
+
+    <div class="receipt">
+    	<img src="receipt.jpg">
+        <div class="total"></div>
+    </div>
+</div>
+        '''
+        self.close ='''
+    </body>
+</html>
+        '''
 
 
 

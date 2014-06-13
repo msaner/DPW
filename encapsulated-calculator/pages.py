@@ -9,10 +9,10 @@ class Page(object):
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{self.title}</title>
+        <title>Food Cost Calculator</title>
 
 
-        <link href="{self.css}" rel="stylesheet" type="text/css">
+        <link href="http://www.teamsaner.com/RMO/main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         '''
