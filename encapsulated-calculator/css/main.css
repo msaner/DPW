@@ -19,15 +19,24 @@ body{
 }
 
 .chart {
-	width:570px;
+	width:300px;
 	float:left;
+}
+
+.button{
+	display:block;
+	width:200px;
 }
 
 .receipt {
 	width:350px;
-	float:right;	
+	float:left;	
 	padding-left:40px;
 	position:relative;
+}
+
+ul li{
+	list-style-type:none;
 }
 
 .total{

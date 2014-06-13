@@ -40,8 +40,8 @@ class MainHandler(webapp2.RequestHandler):
         r.work_snacks = 5
         r.other = 0
         #call the getter function and print result
-        self.response.write('Robert spent $' + str(r.total) + ' on food this week.')
-
+        r.total = r.groceries + r.fast_food + r.dining_out + r.work_snacks + r.other
+        r.update()
 
         #Mary
         m = Food()
@@ -50,7 +50,9 @@ class MainHandler(webapp2.RequestHandler):
         m.dining_out = 81
         m.work_snacks = 7
         m.other = 14
-        self.response.write('Mary spent $' + str(m.total) + ' on food this week.')
+
+        m.total = m.groceries + m.fast_food + m.dining_out + m.work_snacks + m.other
+        m.update()
 
         #James
         j = Food()
@@ -59,7 +61,9 @@ class MainHandler(webapp2.RequestHandler):
         j.dining_out = 0
         j.work_snacks = 13
         j.other = 21
-        self.response.write('James spent $' + str(j.total) + ' on food this week.')
+
+        j.total = j.groceries + j.fast_food + j.dining_out + j.work_snacks + j.other
+        j.update()
 
         #Katy
         k = Food()
@@ -68,7 +72,9 @@ class MainHandler(webapp2.RequestHandler):
         k.dining_out = 21
         k.work_snacks = 4
         k.other = 0
-        self.response.write('Katy spent $' + str(k.total) + ' on food this week.')
+
+        k.total = k.groceries + k.fast_food + k.dining_out + k.work_snacks + k.other
+        k.update()
 
         #Steve
         s = Food()
@@ -77,10 +83,16 @@ class MainHandler(webapp2.RequestHandler):
         s.dining_out = 107
         s.work_snacks = 36
         s.other = 0
-        self.response.write('Steve spent $' + str(s.total) + ' on food this week.')
 
-        users = [r, m, j, k, s]
-        print users[0].groceries
+        s.total = s.groceries + s.fast_food + s.dining_out + s.work_snacks + s.other
+        s.update()
+
+        
+
+        #change the HTML
+        if self.request.GET:
+            groc = self.request.GET['r']
+
 
 
 class Food(object):
