@@ -142,6 +142,20 @@ class User(object) #this needs to be the exact same name as the call associated 
         self.other = 0
         self.__total = 0  # the total attribute is private
 
+    #this is a getter we'll be making __total usable
+    @property
+    def total(self):
+        return self.__total
+
+    #now make a setter mus use the exact same function name
+    def total(self, new_total):
+        self.__total = new_total
+
+    '''
+    here we will calculate all the expenses to get a users weekly amount
+    the name of this function is being called by update() make sure the name matches
+    '''
+    def update(self):
 
 
 # can't touch this nah na na nahh... can't touch this
