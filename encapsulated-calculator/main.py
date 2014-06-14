@@ -124,8 +124,8 @@ class MainHandler(webapp2.RequestHandler):
         #now for a function to get user info and write it to the page
         if self.request.GET:
             #we are going to use i for index it's the easiest way to add more users later if needed
-            i = self.request.GET
-            i = int(i) #chaning the string from the html code into an integer
+            i = self.request.GET['i']
+            i = int(i)
             #so if there's info to get we're going to write this out
             self.response.write(page_open + page_content + "<p>Groceries: $" + str(user[i].groceries) + " </p> <p>Fast Food: $" + str(user[i].fast) + "</p> <p>Dining Out: $" + str(user[i].dining) + "</p> <p>Work Snacks: $" + str(user[i].work) + "</p> <p>Other: $" + str(user[i].other) + "</p>" + "<div class='total'>" + str(user[i].total) + "</div>" + page_close)
         #if there isn't anything to get we'll do this instead
