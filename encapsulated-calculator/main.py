@@ -118,6 +118,17 @@ class MainHandler(webapp2.RequestHandler):
         s.total = 0
         s.update()
 
+        #we need to create an array to store all of our users in
+        user = [r, m, j, k, s]
+
+        #now for a function to get user info and write it to the page
+        if self.request.GET:
+            #we are going to use i for index it's the easiest way to add more users later if needed
+            i = self.request.GET
+            i = init(i) #chaning the string from the html code into an integer
+            #so if there's info to get we're going to write this out
+            self.response.write()
+
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
