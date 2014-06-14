@@ -132,8 +132,9 @@ class MainHandler(webapp2.RequestHandler):
         else:
             self.response.write(page_open + page_content + page_receipt + page_close)
 
-#create a class to store the user objects everythings 0 till we assign values later
-class User(object) #this needs to be the exact same name as the call associated with all the users
+
+#create a class to store the user objects every things 0 till we assign values later
+class User(object):
     def __init__(self):
         self.groceries = 0
         self.fast = 0
@@ -156,7 +157,8 @@ class User(object) #this needs to be the exact same name as the call associated 
     the name of this function is being called by update() make sure the name matches
     '''
     def update(self):
-
+        #add it all up, put in all user objects
+        self.__total = self.groceries + self.fast + self.dining + self.work + self.other
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
