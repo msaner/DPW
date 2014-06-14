@@ -69,7 +69,7 @@ class MainHandler(webapp2.RequestHandler):
         #weekly expenses for users
 
         #Robert
-        r = write_stuff()
+        r = User()
         r.groceries = 90
         r.fast_food = 40
         r.dining_out = 40
@@ -80,7 +80,7 @@ class MainHandler(webapp2.RequestHandler):
         r.update()
 
         #Mary
-        m = write_stuff()
+        m = User()
         m.groceries = 55
         m.fast_food = 23
         m.dining_out = 81
@@ -91,7 +91,7 @@ class MainHandler(webapp2.RequestHandler):
         m.update()
 
         #James
-        j = write_stuff()
+        j = User()
         j.groceries = 213
         j.fast_food = 57
         j.dining_out = 0
@@ -102,7 +102,7 @@ class MainHandler(webapp2.RequestHandler):
         j.update()
 
         #Katy
-        k = write_stuff()
+        k = User()
         k.groceries = 118
         k.fast_food = 56
         k.dining_out = 21
@@ -113,7 +113,7 @@ class MainHandler(webapp2.RequestHandler):
         k.update()
 
         #Steve
-        s = write_stuff()
+        s = User()
         s.groceries = 249
         s.fast_food = 87
         s.dining_out = 107
