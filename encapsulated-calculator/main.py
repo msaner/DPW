@@ -75,8 +75,7 @@ class MainHandler(webapp2.RequestHandler):
         r.dining_out = 40
         r.work_snacks = 5
         r.other = 0
-        #call the getter function and print result
-        r.total = int(r.groceries) + int(r.fast_food) + int(r.dining_out) + int(r.work_snacks) + int(r.other)
+        r.total = 0
         r.update()
 
         #Mary
@@ -86,8 +85,7 @@ class MainHandler(webapp2.RequestHandler):
         m.dining_out = 81
         m.work_snacks = 7
         m.other = 14
-
-        m.total = m.groceries + m.fast_food + m.dining_out + m.work_snacks + m.other
+        m.total = 0
         m.update()
 
         #James
@@ -97,8 +95,7 @@ class MainHandler(webapp2.RequestHandler):
         j.dining_out = 0
         j.work_snacks = 13
         j.other = 21
-
-        j.total = j.groceries + j.fast_food + j.dining_out + j.work_snacks + j.other
+        j.total = 0
         j.update()
 
         #Katy
@@ -108,8 +105,7 @@ class MainHandler(webapp2.RequestHandler):
         k.dining_out = 21
         k.work_snacks = 4
         k.other = 0
-
-        k.total = k.groceries + k.fast_food + k.dining_out + k.work_snacks + k.other
+        k.total = 0
         k.update()
 
         #Steve
@@ -119,8 +115,7 @@ class MainHandler(webapp2.RequestHandler):
         s.dining_out = 107
         s.work_snacks = 36
         s.other = 0
-
-        s.total = s.groceries + s.fast_food + s.dining_out + s.work_snacks + s.other
+        s.total = 0
         s.update()
 
 # can't touch this nah na na nahh... can't touch this
