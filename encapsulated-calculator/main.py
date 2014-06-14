@@ -127,7 +127,7 @@ class MainHandler(webapp2.RequestHandler):
             i = self.request.GET
             i = int(i) #chaning the string from the html code into an integer
             #so if there's info to get we're going to write this out
-            self.response.write()
+            self.response.write(page_open + page_content + "<p>Groceries: $" + str(user[i].groceries) + " </p> <p>Fast Food: $" + str(user[i].fast) + "</p> <p>Dining Out: $" + str(user[i].dining) + "</p> <p>Work Snacks: $" + str(user[i].work) + "</p> <p>Other: $" + str(user[i].other) + "</p>" + "<div class='total'>" + str(user[i].total) + "</div>" + page_close)
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
