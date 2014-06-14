@@ -22,7 +22,6 @@ Encapsulated Calculator
 # limitations under the License.
 #
 import webapp2
-from pages import Page
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -83,94 +82,6 @@ class MainHandler(webapp2.RequestHandler):
 
         s.total = s.groceries + s.fast_food + s.dining_out + s.work_snacks + s.other
         s.update()
-
-        if self.request.GET:
-            person = self.request.GET['user']
-
-            if person == "r":
-                self.response.write(r.print_out())
-            elif person == "m":
-                self.response.write(m.print_out())
-            elif person == "j":
-                self.response.write(j.print_out())
-            elif person == "k":
-                self.response.write(k.print_out())
-            elif person == "s":
-                self.response.write(s.print_out())
-
-
-    #the HTML
-class write_stuff(object):
-    def __init__(self):
-        # these attributes will be public unless noted otherwise
-        self.groceries = 0
-        self.fast_food = 0
-        self.dining_out = 0
-        self.work_snacks = 0
-        self.other = 0
-        self.total = 0  # the total attribute is private
-
-
-        #this here is the template
-        self.__page = '''<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Food Cost Calculator</title>
-
-
-        <link href="http://www.teamsaner.com/RMO/main.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        '''
-        self.__body = '''<div class="container">
-
-    	<h1>Weekly Food Cost Calculator</h1>
-        <p>Click on a users name to reveal their weekly expenses.</p>
-    <div class="chart">
-        <div>
-        	<a href="?user=r">Robert</a>
-            <a href="?user=m">Mary</a>
-            <a href="?user=j">James</a>
-            <a href="?user=k">Katy</a>
-            <a href="?user=s">Steve</a>
-        </div>
-     </div><!-- chart -->
-
-    <div class="receipt">
-    	<img src="http://www.teamsaner.com/RMO/receipt.jpg">
-        <div class="total">
-        	<p>Groceries: ${self.groceries}</p>
-            <p>Fast Food: ${self.fast_food}</p>
-        	<p>Dining Out: ${self.dining_out}</p>
-            <p>Work Snacks: ${self.work_snacks}</p>
-            <p>Other: ${self.other}</p>
-        </div>
-    </div>
-        '''
-        self.__close = '''
-    </body>
-</html>
-        '''
-        self.__everything = self.__page + self.__body + self.__close
-
-    def print_out(self):
-        return self.__everything
-
-
-    @property
-    def alltotal(self):  #make sure this function name matches the attribute above
-
-        return self.__everything
-
-    #setter this won't be used in this application right now
-    @alltotal.setter
-    def alltotal(self, new):
-        self.__everything = str(new)
-
-    def update(self):
-        self.__everything = self.__everything.format(**locals())
-
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
