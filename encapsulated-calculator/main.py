@@ -67,13 +67,12 @@ class MainHandler(webapp2.RequestHandler):
 </body>
 </html> '''
         #weekly expenses for users
-
         #Robert
         r = User()
         r.groceries = 90
-        r.fast_food = 40
-        r.dining_out = 40
-        r.work_snacks = 5
+        r.fast = 40
+        r.dining = 40
+        r.work = 5
         r.other = 0
         r.total = 0
         r.update()
@@ -81,9 +80,9 @@ class MainHandler(webapp2.RequestHandler):
         #Mary
         m = User()
         m.groceries = 55
-        m.fast_food = 23
-        m.dining_out = 81
-        m.work_snacks = 7
+        m.fast = 23
+        m.dining = 81
+        m.work = 7
         m.other = 14
         m.total = 0
         m.update()
@@ -91,9 +90,9 @@ class MainHandler(webapp2.RequestHandler):
         #James
         j = User()
         j.groceries = 213
-        j.fast_food = 57
-        j.dining_out = 0
-        j.work_snacks = 13
+        j.fast = 57
+        j.dining = 0
+        j.work = 13
         j.other = 21
         j.total = 0
         j.update()
@@ -101,9 +100,9 @@ class MainHandler(webapp2.RequestHandler):
         #Katy
         k = User()
         k.groceries = 118
-        k.fast_food = 56
-        k.dining_out = 21
-        k.work_snacks = 4
+        k.fast = 56
+        k.dining = 21
+        k.work = 4
         k.other = 0
         k.total = 0
         k.update()
@@ -111,9 +110,9 @@ class MainHandler(webapp2.RequestHandler):
         #Steve
         s = User()
         s.groceries = 249
-        s.fast_food = 87
-        s.dining_out = 107
-        s.work_snacks = 36
+        s.fast = 87
+        s.dining = 107
+        s.work = 36
         s.other = 0
         s.total = 0
         s.update()
@@ -126,7 +125,6 @@ class MainHandler(webapp2.RequestHandler):
             #we are going to use i for index it's the easiest way to add more users later if needed
             i = self.request.GET['i']
             i = int(i)
-            #so if there's info to get we're going to write this out
             self.response.write(page_open + page_content + "<p>Groceries: $" + str(user[i].groceries) + " </p> <p>Fast Food: $" + str(user[i].fast) + "</p> <p>Dining Out: $" + str(user[i].dining) + "</p> <p>Work Snacks: $" + str(user[i].work) + "</p> <p>Other: $" + str(user[i].other) + "</p>" + "<div class='total'>" + str(user[i].total) + "</div>" + page_close)
         #if there isn't anything to get we'll do this instead
         else:
@@ -149,6 +147,7 @@ class User(object):
         return self.__total
 
     #now make a setter mus use the exact same function name
+    @total.setter
     def total(self, new_total):
         self.__total = new_total
 
