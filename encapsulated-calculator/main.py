@@ -26,6 +26,46 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        #let's start off by putting in the HTML code that's to be printed.
+        page_open = '''
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Food Cost Calculator</title>
+
+        <link href="http://www.teamsaner.com/RMO/main.css" rel="stylesheet" type="text/css">
+    </head>
+<body> '''
+        page_content = '''
+<div class="container">
+    <h1>Weekly Food Cost Calculator</h1>
+    <p>Click on a users name to reveal their weekly expenses.</p>
+    <div class="chart">
+        <div>
+            <a href="?i=0">Robert</a>
+            <a href="?i=1">Mary</a>
+            <a href="?i=2">James</a>
+            <a href="?i=3">Katy</a>
+            <a href="?i=4">Steve</a>
+        </div>
+     </div><!-- chart -->
+
+    <div class="receipt">
+        <img src="http://www.teamsaner.com/RMO/receipt.jpg">
+        <div class="list"> '''
+        #this is where our data will print
+        page_receipt = '''
+            <p>Groceries: </p>
+            <p>Fast Food: </p>
+            <p>Dining Out: </p>
+            <p>Work Snacks: </p>
+            <p>Other: </p> '''
+        page_close = '''
+        </div>
+    </div>
+</body>
+</html> '''
         #weekly expenses for users
 
         #Robert
