@@ -128,6 +128,21 @@ class MainHandler(webapp2.RequestHandler):
             i = int(i) #chaning the string from the html code into an integer
             #so if there's info to get we're going to write this out
             self.response.write(page_open + page_content + "<p>Groceries: $" + str(user[i].groceries) + " </p> <p>Fast Food: $" + str(user[i].fast) + "</p> <p>Dining Out: $" + str(user[i].dining) + "</p> <p>Work Snacks: $" + str(user[i].work) + "</p> <p>Other: $" + str(user[i].other) + "</p>" + "<div class='total'>" + str(user[i].total) + "</div>" + page_close)
+        #if there isn't anything to get we'll do this instead
+        else:
+            self.response.write(page_open + page_content + page_receipt + page_close)
+
+#create a class to store the user objects everythings 0 till we assign values later
+class User(object) #this needs to be the exact same name as the call associated with all the users
+    def __init__(self):
+        self.groceries = 0
+        self.fast = 0
+        self.dining = 0
+        self.work = 0
+        self.other = 0
+        self.__total = 0  # the total attribute is private
+
+
 
 # can't touch this nah na na nahh... can't touch this
 app = webapp2.WSGIApplication([
