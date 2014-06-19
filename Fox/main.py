@@ -122,7 +122,13 @@ class Lion(Animal):
     def __init__(self):
         super(Lion, self).__init__()
 
+class Zebra(Animal):
+    def __init__(self):
+        super(Zebra, self).__init__()
 
+class Elephant(Animal):
+    def __init__(self):
+        super(Elephant, self).__init__()
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
