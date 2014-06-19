@@ -34,7 +34,7 @@ class Page(object):
                         <div id="info">
         '''
         self._details = '''
-                            <p>Phylum:</p>
+                            <p>Phylum: </p>
                             <p>Class: </p>
                             <p>Order: </p>
                             <p>Family: </p>
@@ -101,6 +101,21 @@ class Page(object):
         #this variable will hold the current animal that's selected based on the link clicked
         animal = self.request.GET(animals[i].name)
         print animal.name
+
+#create an animal super class
+class Animal(object):
+    def __init__(self):
+        self.name = ''
+        self.phylum = ''
+        self.a_class = ''
+        self.order = ''
+        self.family = ''
+        self.genus = ''
+        self.life = ''
+        self.habitat = ''
+        self.local = ''
+        self.sound = ''
+        self.pic = ''
 
 
 app = webapp2.WSGIApplication([
