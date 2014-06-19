@@ -57,7 +57,7 @@ class MainHandler(webapp2.RequestHandler):
         lion.life = '10-14 years'
         lion.habitat = 'Jungle'
         lion.local = 'Africa'
-        lion.sound = 'roarr'
+        lion.sound = 'noise'
         lion.pic = 'http://www.teamsaner.com/RMO/images/lion.png'
 
         #call the zebra subclass to run
@@ -71,7 +71,7 @@ class MainHandler(webapp2.RequestHandler):
         zebra.life = '20-25 years'
         zebra.habitat = 'Plains'
         zebra.local = 'Africa'
-        zebra.sound = 'nay snort'
+        zebra.sound = 'noise'
         zebra.pic = 'http://www.teamsaner.com/RMO/images/zebra.png'
 
         #call the elephant subclass to run
@@ -85,7 +85,7 @@ class MainHandler(webapp2.RequestHandler):
         elephant.life = '60-70 years'
         elephant.habitat = 'Jungle, Plains'
         elephant.local = 'Africa'
-        elephant.sound = 'oooompht'
+        elephant.sound = 'noise'
         elephant.pic = 'http://www.teamsaner.com/RMO/images/elephant.png'
 
         #we need to store all these animals somewhere, lets make an array
