@@ -64,18 +64,18 @@ class Page(object):
         lion.local = ''
         lion.sound = ''
 
-        #call the lion subclass to run
-        lion = Lion()
-        lion.name = ''
-        lion.phylum = ''
-        lion.a_class = ''
-        lion.order = ''
-        lion.family = ''
-        lion.genus = ''
-        lion.life = ''
-        lion.habitat = ''
-        lion.local = ''
-        lion.sound = ''
+        #call the zebra subclass to run
+        zebra = Zebra()
+        zebra.name = ''
+        zebra.phylum = ''
+        zebra.a_class = ''
+        zebra.order = ''
+        zebra.family = ''
+        zebra.genus = ''
+        zebra.life = ''
+        zebra.habitat = ''
+        zebra.local = ''
+        zebra.sound = ''
 
         #call the lion subclass to run
         lion = Lion()
