@@ -4,7 +4,7 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = Page()
-        self.response.write('Hello world!')
+        #these are animal subclasses we will call
 
 
 #abstract class. this will hold our initial page HTML
@@ -51,6 +51,7 @@ class Page(object):
             </body>
         </html>
         '''
+#add animal information
 
 
 
