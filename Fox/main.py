@@ -3,12 +3,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        p = Page()
-
-
 #abstract class. this will hold our initial page HTML
-class Page(object):
-    def __init__(self):
         self._open = '''
         <!doctype html>
         <html>
