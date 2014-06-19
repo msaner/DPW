@@ -77,18 +77,18 @@ class Page(object):
         zebra.local = ''
         zebra.sound = ''
 
-        #call the lion subclass to run
-        lion = Lion()
-        lion.name = ''
-        lion.phylum = ''
-        lion.a_class = ''
-        lion.order = ''
-        lion.family = ''
-        lion.genus = ''
-        lion.life = ''
-        lion.habitat = ''
-        lion.local = ''
-        lion.sound = ''
+        #call the elephant subclass to run
+        elephant = Elephant()
+        elephant.name = ''
+        elephant.phylum = ''
+        elephant.a_class = ''
+        elephant.order = ''
+        elephant.family = ''
+        elephant.genus = ''
+        elephant.life = ''
+        elephant.habitat = ''
+        elephant.local = ''
+        elephant.sound = ''
 
 
 
