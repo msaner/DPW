@@ -59,7 +59,7 @@ class MainHandler(webapp2.RequestHandler):
         lion.life = '10-14 years'
         lion.habitat = 'Jungle'
         lion.local = 'Africa'
-        lion.sound = 'noise'
+        lion.sound = 'rawrrr'
         lion.pic = 'http://www.teamsaner.com/RMO/images/lion.png'
 
         #call the zebra subclass to run
@@ -73,7 +73,7 @@ class MainHandler(webapp2.RequestHandler):
         zebra.life = '20-25 years'
         zebra.habitat = 'Plains'
         zebra.local = 'Africa'
-        zebra.sound = 'noise'
+        zebra.sound = 'neighh'
         zebra.pic = 'http://www.teamsaner.com/RMO/images/zebra.png'
 
         #call the elephant subclass to run
@@ -87,7 +87,7 @@ class MainHandler(webapp2.RequestHandler):
         elephant.life = '60-70 years'
         elephant.habitat = 'Jungle, Plains'
         elephant.local = 'Africa'
-        elephant.sound = 'noise'
+        elephant.sound = 'arooooomf'
         elephant.pic = 'http://www.teamsaner.com/RMO/images/elephant.png'
 
         #we need to store all these animals somewhere, lets make an array
@@ -126,16 +126,13 @@ class Animal(object):
         self.life = ''
         self.habitat = ''
         self.local = ''
-        self.sound = ''
+        self.sound = 'animal noise'
         self.pic = ''
 
 #drilling down to specific animals we will create sub classes that inherit the Animal super class
 class Lion(Animal):
     def __init__(self):
         super(Lion, self).__init__()
-
-    def new_sound(self):
-        self.sound = 'Rawrrrr!!!'
 
 class Zebra(Animal):
     def __init__(self):
@@ -144,6 +141,7 @@ class Zebra(Animal):
 class Elephant(Animal):
     def __init__(self):
         super(Elephant, self).__init__()
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
