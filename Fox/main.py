@@ -98,7 +98,9 @@ class MainHandler(webapp2.RequestHandler):
             i= int(i)
             #this variable will hold the current animal that's selected based on the link clicked
             animal = self.request.GET(animals[i].name)
-            print animal.name
+        #need to do something if nothing is clicked i.e. no animal is selected
+        else:
+            self.response.write(self._open + self._body + self._details + self._close)
 
 #create an animal super class
 class Animal(object):
