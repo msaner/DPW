@@ -10,7 +10,7 @@ class MainHandler(webapp2.RequestHandler):
             <head>
                 <meta charset="UTF-8">
                 <title></title>
-                <link href="main.css" rel="stylesheet" type="text/css">
+                <link href="http://www.teamsaner.com/RMO/main.css" rel="stylesheet" type="text/css">
             </head>
         '''
         self._body = '''
@@ -23,7 +23,7 @@ class MainHandler(webapp2.RequestHandler):
                     </nav>
                     <div id="card">
                         <div id="animal">
-                            <img src="images/lion.png">
+                            <img src="">
                             <span>Lion</span>
                         </div>
                         <div id="info">
@@ -58,7 +58,7 @@ class MainHandler(webapp2.RequestHandler):
         lion.habitat = 'Jungle'
         lion.local = 'Africa'
         lion.sound = 'roarr'
-        lion.pic = 'images/lion.png'
+        lion.pic = 'http://www.teamsaner.com/RMO/images/lion.png'
 
         #call the zebra subclass to run
         zebra = Zebra()
@@ -72,7 +72,7 @@ class MainHandler(webapp2.RequestHandler):
         zebra.habitat = 'Plains'
         zebra.local = 'Africa'
         zebra.sound = 'nay snort'
-        zebra.pic = 'images/zebra.png'
+        zebra.pic = 'http://www.teamsaner.com/RMO/images/zebra.png'
 
         #call the elephant subclass to run
         elephant = Elephant()
@@ -86,7 +86,7 @@ class MainHandler(webapp2.RequestHandler):
         elephant.habitat = 'Jungle, Plains'
         elephant.local = 'Africa'
         elephant.sound = 'oooompht'
-        elephant.pic = 'images/elephant.png'
+        elephant.pic = 'http://www.teamsaner.com/RMO/images/elephant.png'
 
         #we need to store all these animals somewhere, lets make an array
         animals = [lion, zebra, elephant]
