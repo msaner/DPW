@@ -4,7 +4,6 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = Page()
-        #these are animal subclasses we will call
 
 
 #abstract class. this will hold our initial page HTML
@@ -52,6 +51,44 @@ class Page(object):
         </html>
         '''
 #add animal information
+        #call the lion subclass to run
+        lion = Lion()
+        lion.name = ''
+        lion.phylum = ''
+        lion.a_class = ''
+        lion.order = ''
+        lion.family = ''
+        lion.genus = ''
+        lion.life = ''
+        lion.habitat = ''
+        lion.local = ''
+        lion.sound = ''
+
+        #call the lion subclass to run
+        lion = Lion()
+        lion.name = ''
+        lion.phylum = ''
+        lion.a_class = ''
+        lion.order = ''
+        lion.family = ''
+        lion.genus = ''
+        lion.life = ''
+        lion.habitat = ''
+        lion.local = ''
+        lion.sound = ''
+
+        #call the lion subclass to run
+        lion = Lion()
+        lion.name = ''
+        lion.phylum = ''
+        lion.a_class = ''
+        lion.order = ''
+        lion.family = ''
+        lion.genus = ''
+        lion.life = ''
+        lion.habitat = ''
+        lion.local = ''
+        lion.sound = ''
 
 
 
