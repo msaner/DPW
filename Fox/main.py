@@ -63,6 +63,7 @@ class Page(object):
         lion.habitat = ''
         lion.local = ''
         lion.sound = ''
+        lion.pic = ''
 
         #call the zebra subclass to run
         zebra = Zebra()
@@ -76,6 +77,7 @@ class Page(object):
         zebra.habitat = ''
         zebra.local = ''
         zebra.sound = ''
+        zebra.pic = ''
 
         #call the elephant subclass to run
         elephant = Elephant()
@@ -89,6 +91,7 @@ class Page(object):
         elephant.habitat = ''
         elephant.local = ''
         elephant.sound = ''
+        elephant.pic = ''
 
 
 
