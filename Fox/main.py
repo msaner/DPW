@@ -81,17 +81,17 @@ class Page(object):
 
         #call the elephant subclass to run
         elephant = Elephant()
-        elephant.name = ''
-        elephant.phylum = ''
-        elephant.a_class = ''
-        elephant.order = ''
-        elephant.family = ''
-        elephant.genus = ''
-        elephant.life = ''
-        elephant.habitat = ''
-        elephant.local = ''
-        elephant.sound = ''
-        elephant.pic = ''
+        elephant.name = 'Elephant'
+        elephant.phylum = 'Chordata'
+        elephant.a_class = 'Mammal'
+        elephant.order = 'Proboscidea'
+        elephant.family = 'Elephantidae'
+        elephant.genus = 'Loxodonta'
+        elephant.life = '60-70 years'
+        elephant.habitat = 'Jungle, Plains'
+        elephant.local = 'Africa'
+        elephant.sound = 'oooompht'
+        elephant.pic = 'images/elephant.png'
 
 
 
