@@ -95,8 +95,12 @@ class Page(object):
 
         #we need to store all these animals somewhere, lets make an array
         animals = [lion, zebra, elephant]
-        #do something with it, print out the info
-        self.response.write(self._open + self._body + self._details + self._close)
+        #we're using i as an index to tell what animal to print info for but lets assign i and make it an int
+        i = self.request.GET['i']
+        i= int(i)
+        #this variable will hold the current animal that's selected based on the link clicked
+        animal = self.request.GET(animals[i].name)
+        print animal.name
 
 
 app = webapp2.WSGIApplication([
