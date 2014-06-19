@@ -117,6 +117,12 @@ class Animal(object):
         self.sound = ''
         self.pic = ''
 
+#drilling down to specific animals we will create sub classes that inherit the Animal super class
+class Lion(Animal):
+    def __init__(self):
+        super(Lion, self).__init__()
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
