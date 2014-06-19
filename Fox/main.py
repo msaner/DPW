@@ -34,7 +34,7 @@ class Page(object):
                         </div>
                         <div id="info">
         '''
-        self._close = '''
+        self._details = '''
                             <p>Phylum:</p>
                             <p>Class: </p>
                             <p>Order: </p>
