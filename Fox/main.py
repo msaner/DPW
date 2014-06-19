@@ -23,8 +23,10 @@ class MainHandler(webapp2.RequestHandler):
                     </nav>
                     <div id="card">
                         <div id="animal">
+        '''
+        self._thumb = '''
                             <img src="">
-                            <span>Lion</span>
+                            <span></span>
                         </div>
                         <div id="info">
         '''
@@ -98,17 +100,19 @@ class MainHandler(webapp2.RequestHandler):
             i= int(i)
             #this variable will hold the current animal that's selected based on the link clicked
             #print the animal info out
-            self.response.write(self._open + self._body + '<p>Phylum: ' + str(animals[i].phylum) + '</p>' +
-                                                            '<p>Class: ' + </p>
-                                                            '<p>Order: ' + </p>
-                                                            '<p>Family: ' + </p>
-                                                            '<p>Genus: ' +  </p>
-                                                            '<p>Avg. Lifespan: ' + </p>
-                                                            '<p>Habitat: ' +  </p>
-                                                            '<p>Geo. Location: ' + </p> + self._close)
+            self.response.write(self._open + self._body + '<img src="http://www.teamsaner.com/RMO/images/' + str(animals[i].name) + '.png">'
+                                                            '<span>' + str(animals[i].name) + '</span>' + '</div> <div id="info">' +
+                                                            '<p>Phylum: ' + str(animals[i].phylum) + '</p>'
+                                                            '<p>Class: ' + str(animals[i].a_class) + '</p>'
+                                                            '<p>Order: ' + str(animals[i].order) + '</p>'
+                                                            '<p>Family: ' + str(animals[i].family) + '</p>'
+                                                            '<p>Genus: ' +  str(animals[i].genus) + '</p>'
+                                                            '<p>Avg. Lifespan: ' + str(animals[i].life) + '</p>'
+                                                            '<p>Habitat: ' +  str(animals[i].habitat) + '</p>'
+                                                            '<p>Geo. Location: ' + str(animals[i].local) + '</p>' + self._close)
         #need to do something if nothing is clicked i.e. no animal is selected
         else:
-            self.response.write(self._open + self._body + self._details + self._close)
+            self.response.write(self._open + self._body + self._thumb + self._details + self._close)
 
 #create an animal super class
 class Animal(object):
