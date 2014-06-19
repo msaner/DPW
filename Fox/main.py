@@ -93,7 +93,10 @@ class Page(object):
         elephant.sound = 'oooompht'
         elephant.pic = 'images/elephant.png'
 
-
+        #we need to store all these animals somewhere, lets make an array
+        animals = [lion, zebra, elephant]
+        #do something with it, print out the info
+        self.response.write(self._open + self._body + self._details + self._close)
 
 
 app = webapp2.WSGIApplication([
