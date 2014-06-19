@@ -67,17 +67,17 @@ class Page(object):
 
         #call the zebra subclass to run
         zebra = Zebra()
-        zebra.name = ''
-        zebra.phylum = ''
-        zebra.a_class = ''
-        zebra.order = ''
-        zebra.family = ''
-        zebra.genus = ''
-        zebra.life = ''
-        zebra.habitat = ''
-        zebra.local = ''
-        zebra.sound = ''
-        zebra.pic = ''
+        zebra.name = 'Zebra'
+        zebra.phylum = 'Chordata'
+        zebra.a_class = 'Mammalia'
+        zebra.order = 'Perissodactyla'
+        zebra.family = 'Equidae'
+        zebra.genus = 'Equus'
+        zebra.life = '20-25 years'
+        zebra.habitat = 'Plains'
+        zebra.local = 'Africa'
+        zebra.sound = 'nay snort'
+        zebra.pic = 'images/zebra.png'
 
         #call the elephant subclass to run
         elephant = Elephant()
