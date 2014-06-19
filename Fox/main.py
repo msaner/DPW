@@ -53,17 +53,17 @@ class Page(object):
 #add animal information
         #call the lion subclass to run
         lion = Lion()
-        lion.name = ''
-        lion.phylum = ''
-        lion.a_class = ''
-        lion.order = ''
-        lion.family = ''
-        lion.genus = ''
-        lion.life = ''
-        lion.habitat = ''
-        lion.local = ''
-        lion.sound = ''
-        lion.pic = ''
+        lion.name = 'Lion'
+        lion.phylum = 'Chordata'
+        lion.a_class = 'Mammalia'
+        lion.order = 'Carnivora'
+        lion.family = 'Felidae'
+        lion.genus = 'Panthera'
+        lion.life = '10-14 years'
+        lion.habitat = 'Jungle'
+        lion.local = 'Africa'
+        lion.sound = 'roarr'
+        lion.pic = 'images/lion.png'
 
         #call the zebra subclass to run
         zebra = Zebra()
