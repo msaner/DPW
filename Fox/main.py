@@ -97,7 +97,15 @@ class MainHandler(webapp2.RequestHandler):
             i = self.request.GET['i']
             i= int(i)
             #this variable will hold the current animal that's selected based on the link clicked
-            animal = self.request.GET(animals[i].name)
+            #print the animal info out
+            self.response.write(self._open + self._body + '<p>Phylum: ' + str(animals[i].phylum) + '</p>' +'''
+                            <p>Class: </p>
+                            <p>Order: </p>
+                            <p>Family: </p>
+                            <p>Genus: </p>
+                            <p>Avg. Lifespan</p>
+                            <p>Habitat: </p>
+                            <p>Geo. Location</p>''' + self._close)
         #need to do something if nothing is clicked i.e. no animal is selected
         else:
             self.response.write(self._open + self._body + self._details + self._close)
@@ -121,6 +129,9 @@ class Animal(object):
 class Lion(Animal):
     def __init__(self):
         super(Lion, self).__init__()
+
+    def new_sound(self):
+        self.sound = 'Rawrrrr!!!'
 
 class Zebra(Animal):
     def __init__(self):
