@@ -80,11 +80,12 @@ class NewsModel(object):
 
         self._objs = []
         #create the following data objects and store them in the objs array
-        obj = NewsData()
-        obj.title = story['title']['$text']
-        obj.date = story['storyDate']['$text']
-        obj.teaser = story['teaser']['$text']
-        obj.link = story['link'][0]['$text']
+        for story in json_obj['list']['story']:
+            obj = NewsData()
+            obj.title = story['title']['$text']
+            obj.date = story['storyDate']['$text']
+            obj.teaser = story['teaser']['$text']
+            obj.link = story['link'][0]['$text']
 
         self._objs.append(obj)
 
@@ -154,18 +155,9 @@ class FormPage(Page):
             #else just close the tag
             except:
                 self._form_inputs += '" />'
-        
 
-
-
-
-
-
-
-
-
-
-
+    def print_out(self):
+        return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
