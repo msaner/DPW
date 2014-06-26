@@ -62,6 +62,12 @@ class NewsView(object):
         self.__nobjs = arr
         self.update()
 
+
+class NewsModel(object):
+    ''' get, parse and sort data from the API '''
+    def __init__(self):
+        self.__url = "http://api.npr.org/query?"
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
