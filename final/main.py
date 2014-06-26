@@ -12,7 +12,8 @@ from json import load
 #Controller class
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        #create the meta data for our form input
+        p = FormPage()
+        #input form array
         p.inputs = [['id', 'text', 'Enter A Category ID'],['Submit', 'submit']]
 
         #if the user inters in a value execute...
