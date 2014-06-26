@@ -40,14 +40,13 @@ class NewsView(object):
     ''' determines how data is displayed on the page '''
     def __init__(self):
         self.__nobj = []
-        self.__content = '<br>'
+        self.__content = '''<div style="width:300px;">'''
 
     def update(self):
         #for every object in the array do this
         for obj in self.__nobjs:
-            self.__content += "Title: " + obj.title + "<br>"
-            self.__content += "Date: " + obj.date + "<br>"
-            self.__content += "Lead-in: " + obj.teaser + "<br>"
+            self.__content += "<h2>" + obj.title + "</h2><br>"
+            self.__content += "<p>" + obj.teaser + "</p><br>"
             self.__content += "Read More: " + obj.link + "<br><br>"
 
     @property
@@ -84,7 +83,6 @@ class NewsModel(object):
         for story in json_obj['list']['story']:
             obj = NewsData()
             obj.title = story['title']['$text']
-            obj.date = story['storyDate']['$text']
             obj.teaser = story['teaser']['$text']
             obj.link = story['link'][0]['$text']
 
@@ -119,10 +117,25 @@ class Page(object):
         <html>
             <head>
                 <title></title>
+                <link href="http://www.teamsaner.com/RMO/main.css" rel="stylesheet" type="text/css">
             </head>
-            <body>'''
-        self._body = 'NPR News Reader'
+            <body>
+                <div id="container">
+                    <h1>NPR Newsfeed Widget</h1>
+                    <p>To customize your feed type in the ID for one of the following categories:</p>
+                    <ul>
+                        <li>Main news articles, enter: <span>1001</span></li>
+                        <li>NPR homepage articles, enter: <span>1002</span></li>
+                        <li>Movie articles, enter: <span>1045</span></li>
+                        <li>Science articles, enter: <span>1007</span></li>
+                        <li>Economic articles, enter: <span>1032</span></li>
+                    </ul>
+
+        '''
+        self._body = ''
         self._close = '''
+        </div>
+            </div>
             </body>
         </html>'''
 
@@ -158,7 +171,7 @@ class FormPage(Page):
                 self._form_inputs += '" />'
 
     def print_out(self):
-        return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+        return self._head + self._form_open + self._form_inputs + self._form_close + self._body + self._close
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
