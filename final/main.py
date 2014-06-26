@@ -49,6 +49,18 @@ class NewsView(object):
             self.__content += "Lead-in: " + obj.teaser + "<br>"
             self.__content += "Read More: " + obj.link + "<br><br>"
 
+    @property
+    def content(self):
+        return self.__content
+
+    @property
+    def nobjs(self):
+        pass
+
+    @nobjs.setter
+    def nobjs(self, arr):
+        self.__nobjs = arr
+        self.update()
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
