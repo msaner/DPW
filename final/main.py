@@ -87,7 +87,20 @@ class NewsModel(object):
         obj.link = story['link'][0]['$text']
 
         self._objs.append(obj)
-        
+
+    @property
+    def objs(self):
+        return self._objs
+
+    @property
+    def id(self):
+        pass
+
+    @id.setter
+    def id(self, z):
+        self.__id = z
+    
+
 
 
 
