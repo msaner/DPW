@@ -39,8 +39,15 @@ class NewsView(object):
     ''' determines how data is displayed on the page '''
     def __init__(self):
         self.__nobj = []
+        self.__content = '<br>'
 
-
+    def update(self):
+        #for every object in the array do this
+        for obj in self.__nobjs:
+            self.__content += "Title: " + obj.title + "<br>"
+            self.__content += "Date: " + obj.date + "<br>"
+            self.__content += "Lead-in: " + obj.teaser + "<br>"
+            self.__content += "Read More: " + obj.link + "<br><br>"
 
 
 app = webapp2.WSGIApplication([
