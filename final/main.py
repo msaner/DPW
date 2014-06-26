@@ -144,9 +144,17 @@ class FormPage(Page):
 
     @inputs.setter
     def inputs(self, array):
+        self.__inputs = array
+        #sort the array and add to input
+        for item in array:
+            self._form_inputs += '<input type="' + item[1] + '" name="' + item[0]
+            #if there's another attribute add that too
+            try:
+                self._form_inputs += '" placeholder="' + item[2] + '" />'
+            #else just close the tag
+            except:
+                self._form_inputs += '" />'
         
-
-
 
 
 
