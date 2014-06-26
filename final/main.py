@@ -74,7 +74,11 @@ class NewsModel(object):
         self.__require = '&requiredAssets=text,image,audio'
 
     #send all the needed data to the api via url
-    
+    def callApi(self):
+        response = urlopen(self.__url+self.__id+self.__require)
+        json_obj = load(response)
+
+        
 
 
 app = webapp2.WSGIApplication([
