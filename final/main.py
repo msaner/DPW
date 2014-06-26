@@ -78,7 +78,24 @@ class NewsModel(object):
         response = urlopen(self.__url+self.__id+self.__require)
         json_obj = load(response)
 
+        self._objs = []
+        #create the following data objects and store them in the objs array
+        obj = NewsData()
+        obj.title = story['title']['$text']
+        obj.date = story['storyDate']['$text']
+        obj.teaser = story['teaser']['$text']
+        obj.link = story['link'][0]['$text']
+
+        self._objs.append(obj)
         
+
+
+
+
+
+
+
+
 
 
 app = webapp2.WSGIApplication([
