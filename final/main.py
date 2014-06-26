@@ -68,8 +68,14 @@ class NewsModel(object):
     def __init__(self):
         #this will access the api.
         self.__url = "http://api.npr.org/query?apiKey=MDE1MDY1ODMzMDE0MDM2NzY1NzAzYTJmOA001&numResults=5&format=json&id="
-        #we need to add an auth key
-        self.__
+        #store user input here
+        self.__id = ''
+        #require stories pulled to have the following attributes
+        self.__require = '&requiredAssets=text,image,audio'
+
+    #send all the needed data to the api via url
+    
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
