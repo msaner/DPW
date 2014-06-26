@@ -24,7 +24,6 @@ class MainHandler(webapp2.RequestHandler):
             nm.id = self.request.GET['id']
             #connect to the api
             nm.callApi()
-
             #call view
             nv = NewsView()
             #get data from model and pass to the view
@@ -40,14 +39,14 @@ class NewsView(object):
     ''' determines how data is displayed on the page '''
     def __init__(self):
         self.__nobj = []
-        self.__content = '''<div style="width:300px;">'''
+        self.__content = '<hr>'
 
     def update(self):
         #for every object in the array do this
         for obj in self.__nobjs:
-            self.__content += "<h2>" + obj.title + "</h2><br>"
-            self.__content += "<p>" + obj.teaser + "</p><br>"
-            self.__content += "Read More: " + obj.link + "<br><br>"
+            self.__content += "<h2>" + obj.title + "</h2>"
+            self.__content += "<p>" + obj.teaser + "</p>"
+            self.__content += '<a href="' + obj.link + '" target="_blank">Read This Article</a>'
 
     @property
     def content(self):
@@ -99,7 +98,6 @@ class NewsModel(object):
     @id.setter
     def id(self, z):
         self.__id = z
-
 
 class NewsData(object):
     ''' do something with the data we get from the model & shown in view '''
