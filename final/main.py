@@ -12,7 +12,22 @@ from json import load
 #Controller
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        #create the meta data for our form input
+        p.inputs = [['id', 'text', 'Enter A Category ID'],['Submit', 'submit']]
+
+        #if the user inters in a value execute...
+        if self.request.GET:
+            id = self.request.GET['id']
+            #call the model
+            nm = NewsModel()
+            nm.id = self.request.GET['id']
+            #connect to the api
+            nm.callApi()
+
+
+
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
