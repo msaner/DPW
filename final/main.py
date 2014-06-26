@@ -66,7 +66,10 @@ class NewsView(object):
 class NewsModel(object):
     ''' get, parse and sort data from the API '''
     def __init__(self):
-        self.__url = "http://api.npr.org/query?"
+        #this will access the api.
+        self.__url = "http://api.npr.org/query?apiKey=MDE1MDY1ODMzMDE0MDM2NzY1NzAzYTJmOA001&numResults=5&format=json&id="
+        #we need to add an auth key
+        self.__
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
