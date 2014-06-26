@@ -30,7 +30,8 @@ class MainHandler(webapp2.RequestHandler):
             nv.objs = nm.objs
             p._body = nv.content
 
-        
+        #write everything to the page
+        self.response.write(p.print_out())
 
 
 
