@@ -14,7 +14,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = FormPage()
         #input form array
-        p.inputs = [['id', 'text', 'Enter A Category ID'],['Submit', 'submit']]
+        p.inputs = [['id', 'text', 'Enter A Category ID'], ['Submit', 'submit']]
 
         #if the user inters in a value execute...
         if self.request.GET:
@@ -88,7 +88,7 @@ class NewsModel(object):
             obj.teaser = story['teaser']['$text']
             obj.link = story['link'][0]['$text']
 
-        self._objs.append(obj)
+            self._objs.append(obj)
 
     @property
     def objs(self):
