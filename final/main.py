@@ -99,7 +99,32 @@ class NewsModel(object):
     @id.setter
     def id(self, z):
         self.__id = z
-    
+
+
+class NewsData(object):
+    ''' do something with the data we get from the model & shown in view '''
+    def __init__(self):
+        self.title = ''
+        self.date = ''
+        self.teaser = ''
+        self.link = ''
+
+#abstract class
+class Page(object):
+    def __init__(self):
+        self._head = '''
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <title></title>
+            </head>
+            <body>'''
+        self._body = 'NPR News Reader'
+        self._close = '''
+            </body>
+        </html>'''
+
+
 
 
 
