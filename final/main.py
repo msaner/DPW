@@ -24,6 +24,13 @@ class MainHandler(webapp2.RequestHandler):
             #connect to the api
             nm.callApi()
 
+            #call view
+            nv = NewsView()
+            #get data from model and pass to the view
+            nv.objs = nm.objs
+            p._body = nv.content
+
+        
 
 
 
