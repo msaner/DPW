@@ -9,7 +9,7 @@ from urllib2 import urlopen
 from json import load
 
 
-#Controller
+#Controller class
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         #create the meta data for our form input
@@ -27,12 +27,18 @@ class MainHandler(webapp2.RequestHandler):
             #call view
             nv = NewsView()
             #get data from model and pass to the view
-            nv.objs = nm.objs
+            nv.nobjs = nm.objs
             p._body = nv.content
 
         #write everything to the page
         self.response.write(p.print_out())
 
+
+#View class
+class NewsView(object):
+    ''' determines how data is displayed on the page '''
+    def __init__(self):
+        self.__nobj = []
 
 
 
